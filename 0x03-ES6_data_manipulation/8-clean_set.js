@@ -1,10 +1,10 @@
 export default function cleanSet(set, startString) {
-  if (!startString || typeof startString !== 'string' || startString.length === 0) {
+  if (startString === '' || typeof startString !== 'string' || startString.length === 0) {
     return '';
   }
   const stringUni = [];
   for (const value of set) {
-    if (value.startsWith(startString)) {
+    if (typeof value === 'string' && value.startsWith(startString)) {
       // WE'RE SLICING value str from the index equivalent to length of startstring
       stringUni.push(value.slice(startString.length));
     }
