@@ -23,6 +23,18 @@ class Teacher3 implements Teacher{
 	}
 }
 
+
+
 interface Directors extends Teacher {
 	numberOfReports: number;
 }
+
+
+
+interface printTeacherStructure{
+	(firstName: string, lastName:string): string; 
+}
+const printTeacher: printTeacherStructure = (firstName, lastName) => {
+	const firstInitial = firstName.charAt(0);
+	return `${firstInitial}. ${lastName}`;
+};
