@@ -1,4 +1,4 @@
-Interface Student{
+interface Student{
 	firstName: string;
 	lastName: string;
 	age: number;
@@ -9,29 +9,29 @@ const studentOne: Student = {
 	lastName: 'Chenni',
 	age: 21,
 	location: 'planet earth',
-}
+};
 
 const studentTwo: Student = {
 	firstName: 'Alex',
         lastName: 'Smith',
         age: 21,
         location: 'planet earth',
-}
-const studentsList[studentOne, studentTwo];
+};
+const studentsList: Student[] = [studentOne, studentTwo];
 
 const table = document.createElement('table');
-const tbody = document.createElement('parenttable');
+const tbody = document.createElement('tbody');
 
 studentsList.forEach(student => {
-	const row = document.createElement("Row");
-	const cellName = document.createElement("cell");
-	const locationName = document.createElement("location");
+	const row = document.createElement("tr");
+	const cellName = document.createElement("td");
+	const locationName = document.createElement("td");
 
 	cellName.textContent = student.firstName;
 	locationName.textContent = student.location;
-	row.appenChild(cellName);
+	row.appendChild(cellName);
 	row.appendChild(locationName);
-	parentable.appendChild(row);
+	tbody.appendChild(row);
 });
-table.appendChild(parenttable);
+table.appendChild(tbody);
 document.body.appendChild(table);
