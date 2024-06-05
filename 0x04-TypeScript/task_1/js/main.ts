@@ -38,3 +38,31 @@ const printTeacher: printTeacherStructure = (firstName, lastName) => {
 	const firstInitial = firstName.charAt(0);
 	return `${firstInitial}. ${lastName}`;
 };
+
+
+
+
+
+interface StudentConstructor {
+    new (firstName: string, lastName: string): StudentClassInterface;
+}
+//defining methods that'll be in the class itself
+interface StudentClassInterface {
+    workOnHomework(): string;
+    displayName(): string;
+}
+class StudentClass implements StudentClassInterface{
+	firstName: string;
+    lastName: string;
+
+constructor(firstName:string, lastName:string) {
+	this.firstName = firstName;
+	this.lastName = lastName;
+}
+workOnHomework(): string {
+	return "Currently working";
+}
+displayName(): string {
+	return this.firstName;
+}
+}
